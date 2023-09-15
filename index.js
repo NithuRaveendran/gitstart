@@ -39,3 +39,11 @@ for(var i=0;i<items.length;i++)
 {
     items[i].style.backgroundColor ='yellow';
 }
+//QUERYSELECTOR//
+var item =document.querySelector('.list-group-item');
+item.style.color='blue';
+
+var secondItem=document.querySelector('.list-group-item:child(2')
+secondItem.style.backgroundColor = 'green';
+
+document.querySelector('.list-group-item:child(2').style.display = none;
