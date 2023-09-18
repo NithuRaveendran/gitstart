@@ -37,17 +37,17 @@ label, input {
         <form onsubmit='saveTolocalStorage(event)'>
         
         <label>Name
-        <input type="text" name="username" required/>
+        <input type="text" id="name"  name="username" required/>
         </label>
         </br>
     
         
         <label>Email Id
-        <input type="email" name="emailId" required/>
+        <input type="email" id="email" name="emailId" required/>
         </br></label>
         
         <label>PhoneNumber
-        <input type="tel" name="phonenumber" required/>
+        <input type="tel" id="phonenumber" name="phonenumber" required/>
         </br></label>
     </label>
         <button>submit</button>
@@ -88,8 +88,25 @@ label, input {
             localStorage.removeItem(obj.email)
             parentElem.removeChild(childElem)
         }
+        const editButton =document.createElement('input')
+        editButton.type="button"
+        editButton.value="Edit"
+        editButton.onclick = () =>{
+            localStorage.removeItem(obj.email)
+            parentElem.removeChild(childElem)
+        }
+
         childElem.appendChild(deleteButton)
         parentElem.appendChild(childElem)
+        childElem.appendChild(editButton)
+
+    }
+    function editUserDetails(emailId,name,phonenumber){
+        document.getElementById('name').value=name;
+        document.getElementById('email').value=emailId;
+        document.getElementById('phonenumber').value=phonenumber;
+        
+        deleteUser(emailId)
 
     }
   </script>
