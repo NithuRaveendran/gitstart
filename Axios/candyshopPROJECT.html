@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Candy Shop</title>
+	<link rel="stylesheet" type="text/css" href="candyshop.css">
+</head>
+<body>
+	<h1>CANDY SHOP</h1>
+	<form id="candy-form">
+		<label for="name">Name:</label>
+		<input type="text" id="Name" required>
+		<label for="disc">Description:</label>
+		<input type="text" id="disc" required>
+		<label for="price">Price:</label>
+		<input type="number" id="price" required>
+		<label for="quant">Quantity:</label>
+		<input type="number" id="quant" required>
+		<button type="submit" id="subBtn">Add Candy</button>
+	</form>
+ 
+	<ul id="item-list"></ul>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+	<script src="candyshop.js"></script>
+</body>
+</html>
