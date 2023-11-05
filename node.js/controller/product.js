@@ -1,4 +1,4 @@
-const product = [];
+const pdt = require('.../models/pdt');
 
 exports.getAddProduct = (req,res,next) =>{
     res.render('add-product',{
@@ -11,10 +11,12 @@ exports.getAddProduct = (req,res,next) =>{
 }
 
 exports.postAddProduct = (req, res) => {
-    console.log(req.body);
-    res.redirect('/');
+    const pdt = new pdt(req.body.title);
+    pdt.save();
+   res.redirect('/');
   };
-  exports.Product = (req,res,next) =>{
+  exports.getProduct = (req,res,next) =>{
+    const product = pdt.fetchAll();
     res.render('shop',{
     prods:'product',
     pageTitle:'shop',
